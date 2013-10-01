@@ -20,7 +20,7 @@ module Guard
       end
 
       @run_as_daemon  = options.fetch(:daemonize, false)
-      @enable_bundler = options.fetch(:bundler, true) 
+      @enable_bundler = options.fetch(:bundler, true)
       @pid_file       = options.fetch(:pid_file, DEFAULT_PID_PATH)
       @config_file    = options.fetch(:config_file, DEFAULT_CONFIG_PATH)
       @preloading     = options.fetch(:preloading, false)
@@ -44,7 +44,7 @@ module Guard
       cmd << "-p #{@port}" unless @socket
       cmd << "-l #{@socket}" if @socket
       cmd << "-E #{@environment}"
-      cmd << "-D" if @run_as_daemon 
+      cmd << "-D" if @run_as_daemon
 
       @pid = ::Process.fork do
         system "#{cmd.join " "}"
@@ -121,7 +121,7 @@ module Guard
       # Favor the pid in the pidfile, since some processes
       # might daemonize properly and fork twice.
       if File.exists?(@pid_file)
-        @pid = File.open(@pid_file) { |f| f.gets.to_i } 
+        @pid = File.open(@pid_file) { |f| f.gets.to_i }
       end
 
       @pid
