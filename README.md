@@ -45,7 +45,7 @@ to have graphical notifications.
 ## Guardfile for guard-unicorn
 
 ```ruby
-guard :unicorn, :daemonized => true
+guard :unicorn, :daemonized => true, :port => 3000
 ```
 
 Available options:
@@ -58,4 +58,4 @@ Available options:
 * `:pid_file` path to the Unicorn PID file. Defaults to `tmp/pids/unicorn.pid`
 * `:preloading` is Unicorn configured to preload the application? Defaults to
   `false`.
-* `:port` on what port to run Unicorn. Defaults to `3000`.
+* `:port` on what port to run Unicorn.
